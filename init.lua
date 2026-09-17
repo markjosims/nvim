@@ -48,4 +48,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 -- Taskwarrior ↔ Linear ↔ Obsidian bridge (:LinearIssues, :TWTasks, :TWNote, <leader>tt)
-require("taskwarrior_linear").setup()
+-- Loaded straight from the bridge repo (TWL_REPO, default ~/projects/
+-- taskwarrior-linear) via runtimepath — no vendored copy to keep in sync.
+local twl_repo = vim.fn.expand(os.getenv("TWL_REPO") or "~/projects/taskwarrior-linear")
+if vim.fn.isdirectory(twl_repo .. "/lua") == 1 then
+  vim.opt.runtimepath:append(twl_repo)
+  require("taskwarrior_linear").setup()
+end
