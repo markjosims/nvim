@@ -17,7 +17,10 @@ vim.opt.foldlevelstart = 99
 -- Keep the first line of the fold syntax-highlighted instead of a flat color
 vim.opt.foldtext = ""
 --keymap for Neotree
-vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal float<CR>')
+vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal float<CR>")
+
+-- Needed for obsidian rendering
+vim.opt.conceallevel = 1
 
 -- Ensure lazy.nvim is installed
 
@@ -34,8 +37,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 -- Install lazy.nvim plugins
 
 require("lazy").setup("plugins")
 
+-- Taskwarrior ↔ Linear ↔ Obsidian bridge (:LinearIssues, :TWTasks, :TWNote, <leader>tt)
+require("taskwarrior_linear").setup()
