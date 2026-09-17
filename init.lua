@@ -19,6 +19,12 @@ vim.opt.foldtext = ""
 --keymap for Neotree
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal float<CR>")
 
+vim.keymap.set("n", "<leader>ov", ":ObsidianFollowLink vsplit<CR>")
+vim.keymap.set("n", "<leader>ol", ":ObsidianLinks<CR>")
+vim.keymap.set("n", "<leader>ob", ":ObsidianBacklinks<CR>")
+vim.keymap.set("n", "<leader>ot", ":ObsidianToday<CR>")
+vim.keymap.set("n", "<leader>cb", ":ObsidianToggleCheckbox<CR>")
+vim.keymap.set("n", "<leader>oc", ":ObsidianTOC<CR>")
 -- Needed for obsidian rendering
 vim.opt.conceallevel = 1
 
