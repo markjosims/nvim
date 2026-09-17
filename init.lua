@@ -25,6 +25,7 @@ vim.keymap.set("n", "<leader>ob", ":ObsidianBacklinks<CR>")
 vim.keymap.set("n", "<leader>ot", ":ObsidianToday<CR>")
 vim.keymap.set("n", "<leader>cb", ":ObsidianToggleCheckbox<CR>")
 vim.keymap.set("n", "<leader>oc", ":ObsidianTOC<CR>")
+vim.keymap.set("n", "<leader>os", ":ObsidianSearch<CR>")
 -- Needed for obsidian rendering
 vim.opt.conceallevel = 1
 
